@@ -4,9 +4,12 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import bodyParser from 'body-parser';
 import { writeFile , readFile} from './data/index.js';
+import dotenv from 'dotenv';
+
+dotenv.config()
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 // Obtenir le répertoire du fichier actuel
 const __filename = fileURLToPath(import.meta.url);
